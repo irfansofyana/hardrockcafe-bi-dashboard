@@ -2,9 +2,7 @@ import os
 from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from tables import Base, Customer, Cafe, Product, Promo, Time
-
-from fake_data_generator.customer import generate_fake_customers
+from scripts.schema.tables import Base, Customer, Cafe, Product, Promo, Time, Guest
 
 
 def get_env():
