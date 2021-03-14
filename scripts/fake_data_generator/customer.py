@@ -20,14 +20,14 @@ def generate_fake_customers():
     NUMBER_OF_GENERATED_CUSTOMERS = 10000
 
     for _ in range(NUMBER_OF_GENERATED_CUSTOMERS):
-        choosen_locale = random.randint(0, 5)
-        fake_choosen    = fake[locales[choosen_locale]]
+        chosen_locale = random.randint(0, 5)
+        fake_chosen    = fake[locales[chosen_locale]]
 
-        first_name      = fake_choosen.first_name()
-        last_name       = fake_choosen.last_name()
-        email           = first_name.lower() + last_name.lower() + get_domain_email(fake_choosen.ascii_email())
-        phone_number    = fake_choosen.phone_number()
-        address         = fake_choosen.address()
+        first_name      = fake_chosen.first_name()
+        last_name       = fake_chosen.last_name()
+        email           = first_name.lower() + last_name.lower() + get_domain_email(fake_chosen.ascii_email())
+        phone_number    = fake_chosen.phone_number()
+        address         = fake_chosen.address()
 
         customer = {
             'first_name': first_name,
