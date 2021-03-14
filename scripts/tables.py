@@ -11,6 +11,7 @@ class Customer(Base):
     last_name       = Column(String(30))
     email           = Column(String(50), nullable=False)
     phone_number    = Column(String(30))
+    address         = Column(String(30))
 
 class Cafe(Base):
     __tablename__   = 'cafe'
@@ -28,6 +29,7 @@ class Product(Base):
     __tablename__           = 'product'
 
     id                      = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    name                    = Column(String(50), nullable=False)
     description             = Column(Text)
     category                = Column(String(20), nullable=False)
     category_description    = Column(Text)
@@ -62,7 +64,7 @@ class Time(Base):
     weekday_status          = Column(Boolean, nullable=False)
 
 class Guest(Base):
-    __tablename__           = 'time'
+    __tablename__           = 'guest'
 
     id                      = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     name                    = Column(String(20), nullable=False)
