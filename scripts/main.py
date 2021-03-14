@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from tables import Base, Customer, Cafe, Product, Promo, Time
 
-from fake_data_generator.customer import test
+from fake_data_generator.customer import generate_fake_customers
 
 
 def get_env():
@@ -36,11 +36,10 @@ def create_session(engine):
 
 
 if __name__=="__main__":
-    # env_var = get_env()
-    #
-    # mysql_engine = create_mysql_engine(env_var['mysql_connection_string'])
-    # session = create_session(mysql_engine)
-    #
-    # Base.metadata.create_all(mysql_engine)
-    test()
+    env_var = get_env()
+
+    mysql_engine = create_mysql_engine(env_var['mysql_connection_string'])
+    session = create_session(mysql_engine)
+
+    Base.metadata.create_all(mysql_engine)
 
