@@ -1,0 +1,312 @@
+{
+   "Canada":[
+      "Niagara Falls Canada"
+   ],
+   "United States":[
+      "Atlanta",
+      "Atlantic City",
+      "Baltimore",
+      "Biloxi",
+      "Boston",
+      "Chicago",
+      "Denver",
+      "Foxwoods",
+      "Hollywood FL",
+      "Hollywood on Hollywood Blvd",
+      "Honolulu",
+      "Houston Airport",
+      "Key West",
+      "Las Vegas",
+      "Memphis",
+      "Miami",
+      "Myrtle Beach",
+      "Nashville",
+      "New Orleans",
+      "New York",
+      "Niagara Falls USA",
+      "Orlando",
+      "Philadelphia",
+      "Pigeon Forge",
+      "Pittsburgh",
+      "Sacramento",
+      "San Antonio",
+      "San Francisco",
+      "Seattle",
+      "Tampa",
+      "Tampa Airport",
+      "Washington DC",
+      "Yankee Stadium"
+   ],
+   "Costa Rica":[
+      "San Jose"
+   ],
+   "Mexico":[
+      "Cabo San Lucas",
+      "Cancun",
+      "Cozumel",
+      "Playa Del Carmen"
+   ],
+   "Nicaragua":[
+      "Managua"
+   ],
+   "Panama":[
+      "Panama"
+   ],
+   "Bahamas":[
+      "Nassau"
+   ],
+   "Caymand ":[
+      "Cayman Islands"
+   ],
+   "Dominican Republic":[
+      "Punta Cana",
+      "Santo Domingo"
+   ],
+   "Jamaica":[
+      "Montego Bay"
+   ],
+   "Netherlands Antilles":[
+      "St Maarten"
+   ],
+   "Puerto Rico":[
+      "Ponce"
+   ],
+   "Argentina":[
+      "Buenos Aires",
+      "Buenos Aires Aeroparque",
+      "Ezeiza Airport Cafe",
+      "Puerto Madero",
+      "Ushuaia"
+   ],
+   "Bolivia":[
+      "Santa Cruz"
+   ],
+   "Brazil":[
+      "Curitiba",
+      "Fortaleza ",
+      "Gramado",
+      "RibeirÃ£o Preto"
+   ],
+   "Chile":[
+      "Santiago"
+   ],
+   "Colombia":[
+      "Bogota",
+      "Cartagena"
+   ],
+   "Guyana":[
+      "Guyana"
+   ],
+   "Paraguay":[
+      "Asuncion"
+   ],
+   "Uruguay":[
+      "Montevideo"
+   ],
+   "Venezuela":[
+      "Margarita"
+   ],
+   "Andorra":[
+      "Andorra"
+   ],
+   "Austria":[
+      "Innsbruck",
+      "Vienna"
+   ],
+   "Azerbaijan":[
+      "Baku"
+   ],
+   "BELGIUM":[
+      "Antwerp",
+      "Brussels"
+   ],
+   "Cyprus":[
+      "Ayia Napa"
+   ],
+   "Czech Republic":[
+      "Prague"
+   ],
+   "Denmark":[
+      "Copenhagen"
+   ],
+   "England":[
+      "London",
+      "London Cafe Oxford Street ",
+      "London Piccadilly Circus ",
+      "Manchester",
+      "Newcastle"
+   ],
+   "Finland":[
+      "Helsinki"
+   ],
+   "France":[
+      "Lyon",
+      "Nice",
+      "Paris"
+   ],
+   "Georgia":[
+      "Tbilisi"
+   ],
+   "Germany":[
+      "Berlin",
+      "Cologne",
+      "Hamburg",
+      "Munich"
+   ],
+   "Greece":[
+      "Athens"
+   ],
+   "Hungary":[
+      "Budapest"
+   ],
+   "Iceland":[
+      "Reykjavik"
+   ],
+   "Ireland":[
+      "Dublin"
+   ],
+   "Italy":[
+      "Florence",
+      "Rome",
+      "Venice"
+   ],
+   "Malta":[
+      "Malta Airport",
+      "Malta Bar (Valletta)"
+   ],
+   "Montenegro":[
+      "Podgorica"
+   ],
+   "Netherlands":[
+      "Amsterdam"
+   ],
+   "Norway":[
+      "Oslo"
+   ],
+   "Poland":[
+      "Gdansk",
+      "Krakow",
+      "Warsaw",
+      "Wroclaw"
+   ],
+   "Portugal":[
+      "Lisbon",
+      "Porto"
+   ],
+   "Romania":[
+      "Bucharest"
+   ],
+   "Russia":[
+      "Moscow",
+      "St Petersburg"
+   ],
+   "Scotland":[
+      "Edinburgh",
+      "Glasgow"
+   ],
+   "Spain":[
+      "Barcelona",
+      "Gran Canaria",
+      "Ibiza",
+      "Madrid",
+      "Malaga ",
+      "Mallorca",
+      "Seville",
+      "Tenerife",
+      "Valencia"
+   ],
+   "Sweden":[
+      "Gothenburg",
+      "Stockholm"
+   ],
+   "Egypt":[
+      "Hurghada",
+      "Nabq",
+      "Sharm el Sheikh"
+   ],
+   "Nigeria":[
+      "Lagos"
+   ],
+   "South Africa":[
+      "Cape Town",
+      "Johannesburg",
+      "Pretoria",
+      "Sun City"
+   ],
+   "Tunisia":[
+      "Port El Kantaoui"
+   ],
+   "United Emirates Arab":[
+      "Dubai",
+      "Dubai Airport"
+   ],
+   "Australia":[
+      "Surfers Paradise",
+      "Sydney"
+   ],
+   "Guam":[
+      "Guam"
+   ],
+   "Northern Mariana Islands":[
+      "Saipan"
+   ],
+   "Cambodia":[
+      "Angkor",
+      "Phnom Penh"
+   ],
+   "China":[
+      "Shenzhen",
+      "Tianjin"
+   ],
+   "Indonesia":[
+      "Jakarta",
+      "Bali"
+   ],
+   "Japan":[
+      "Osaka",
+      "Osaka Universal",
+      "Tokyo Roppongi",
+      "Tokyo Uyeno Eki",
+      "Yokohama"
+   ],
+   "Malaysia":[
+      "Kuala Lumpur",
+      "Melaka",
+      "Penang"
+   ],
+   "Maldives":[
+      "Maldives"
+   ],
+   "Mongolia":[
+      "Ulaanbaatar"
+   ],
+   "Nepal":[
+      "Kathmandu"
+   ],
+   "Philippines":[
+      "Manila",
+      "Makati"
+   ],
+   "Singapore":[
+      "Sentosa",
+      "Singapore"
+   ],
+   "Thailand":[
+      "Bangkok",
+      "Chiang Mai",
+      "Koh Samui",
+      "Pattaya",
+      "Phuket"
+   ],
+   "Vietnam":[
+      "Ho Chi Minh City"
+   ],
+   "India":[
+      "Bengaluru",
+      "Bengaluru Whitefield",
+      "Chandigarh",
+      "Guwahati",
+      "Hyderabad",
+      "Kolkata"
+   ]
+}
