@@ -1,0 +1,27 @@
+version: '3.2'
+
+services:
+   db:
+      image: mysql:5.7
+      container_name: hardrock_db
+      restart: always
+      ports:
+        - '3306:3306'
+      environment:
+        MYSQL_USER: "hardrock_cafe"
+        MYSQL_PASSWORD: "password"
+        MYSQL_ROOT_PASSWORD: "password_root"
+      volumes:
+        - hardrockdb:/var/lib/mysql
+   app:
+      depends_on:
+       - db
+      image: phpmyadmin/phpmyadmin
+      container_name: hardrock_phpmyadmin
+      restart: always
+      ports:
+       - '8080:80'
+      environment:
+        PMA_HOST: db
+volumes:
+  hardrockdb:

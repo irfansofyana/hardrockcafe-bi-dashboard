@@ -1,8 +1,10 @@
 import os
 from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine, Column, Integer, String, Sequence
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from tables import Base, Customer, Cafe, Product, Promo, Time
+
+from fake_data_generator.customer import test
 
 
 def get_env():
@@ -33,30 +35,12 @@ def create_session(engine):
         print('Error: ', err)
 
 
-Base = declarative_base()
-
-
-class TestTable(Base):
-    __tablename__ = 'test_table'
-
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
-    test_name = Column(String(20))
-    description = Column(String(20))
-
-
-# TODO: Create the real tables using mapper
-
 if __name__=="__main__":
-    env_var = get_env()
+    # env_var = get_env()
+    #
+    # mysql_engine = create_mysql_engine(env_var['mysql_connection_string'])
+    # session = create_session(mysql_engine)
+    #
+    # Base.metadata.create_all(mysql_engine)
+    test()
 
-    mysql_engine = create_mysql_engine(env_var['mysql_connection_string'])
-    session = create_session(mysql_engine)
-
-    Base.metadata.create_all(mysql_engine)
-
-    ex_row = TestTable(test_name='test_01', description='this_is_only_testing_01')
-    session.add(ex_row)
-    session.commit()
-
-    for row in session.query(TestTable).order_by(TestTable.id):
-        print(row.id, row.test_name, row.description)
