@@ -3,7 +3,7 @@ import datetime
 import random
 
 
-def generate_fake_dates():
+def generate_fake_times():
     def is_weekend(name_of_day):
         weekend_days = ['saturday', 'sunday']
 

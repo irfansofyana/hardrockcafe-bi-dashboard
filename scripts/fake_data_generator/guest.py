@@ -3,7 +3,7 @@ from faker import Faker
 import random
 
 def generate_fake_guests():
-    NUMBER_OF_GENERATED_GUESTS = 200
+    NUMBER_OF_GENERATED_GUESTS = 300
     composition = [
         int(NUMBER_OF_GENERATED_GUESTS / 2),
         int(NUMBER_OF_GENERATED_GUESTS / 9),

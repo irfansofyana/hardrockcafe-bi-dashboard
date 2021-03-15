@@ -12,7 +12,7 @@ class Customer(Base):
     last_name       = Column(String(50))
     email           = Column(String(50), nullable=False)
     phone_number    = Column(String(30))
-    address         = Column(String(30))
+    address         = Column(String(100))
 
 class Cafe(Base):
     __tablename__       = 'cafe'
@@ -34,7 +34,7 @@ class Product(Base):
     id                      = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     name                    = Column(String(50), nullable=False)
     description             = Column(Text)
-    category                = Column(String(50), nullable=False)
+    category_name           = Column(String(50), nullable=False)
     category_description    = Column(Text)
     price_currency          = Column(String(5), nullable=False)
     price_amount            = Column(Integer, nullable=False)
@@ -72,8 +72,8 @@ class Guest(Base):
 
     id                      = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     name                    = Column(String(50), nullable=False)
-    country_origin          = Column(String(50), nullable=False)
-    performance_category    = Column(String(20), nullable=False)
+    country_origin          = Column(String(100), nullable=False)
+    performance_category    = Column(String(100), nullable=False)
     fee_currency            = Column(String(5), nullable=False)
     fee_rate_per_hour       = Column(Integer, nullable=False)
 

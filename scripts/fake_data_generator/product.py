@@ -55,11 +55,11 @@ def generate_fake_products():
 
         return products
 
-    foods_name_directory        = 'static/foods_name.txt'
-    drinks_name_directory       = 'static/drinks_name.txt'
-    snacks_name_directory       = 'static/snacks_name.txt'
-    wedding_packages_directory  = 'static/wedding_packages.json'
-    parties_events_directory    = 'static/party_event_packages.json'
+    foods_name_directory        = 'fake_data_generator/static/foods_name.txt'
+    drinks_name_directory       = 'fake_data_generator/static/drinks_name.txt'
+    snacks_name_directory       = 'fake_data_generator/static/snacks_name.txt'
+    wedding_packages_directory  = 'fake_data_generator/static/wedding_packages.json'
+    parties_events_directory    = 'fake_data_generator/static/party_event_packages.json'
 
     foods_name              = read_products_name(foods_name_directory)
     drinks_name             = read_products_name(drinks_name_directory)

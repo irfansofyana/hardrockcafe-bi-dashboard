@@ -13,14 +13,12 @@ def generate_fake_customers():
         1: 'en_AU',
         2: 'en_GB',
         3: 'id_ID',
-        4: 'sk_SK',
-        5: 'ru_RU'
     }
     fake = Faker(list(locales.values()))
     NUMBER_OF_GENERATED_CUSTOMERS = 10000
 
     for _ in range(NUMBER_OF_GENERATED_CUSTOMERS):
-        chosen_locale = random.randint(0, 5)
+        chosen_locale = random.randint(0, 3)
         fake_chosen    = fake[locales[chosen_locale]]
 
         first_name      = fake_chosen.first_name()
