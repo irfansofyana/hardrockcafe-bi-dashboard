@@ -1,0 +1,22 @@
+{
+   "Bronze Wedding Package":{
+      "Currency": "USD",
+      "Price":3000,
+      "Description":"Bronze wedding package by hard rock cafe"
+   },
+   "Silver Wedding Package":{
+      "Currency": "USD",
+      "Price":5000,
+      "Description":"Silver wedding package by hard rock cafe"
+   },
+   "Gold Wedding Package":{
+      "Currency": "USD",
+      "Price":7000,
+      "Description":"Gold wedding package by hard rock cafe"
+   },
+   "Platinum Wedding Package":{
+     "Currency": "USD",
+     "Price":10000,
+     "Description":"Platinum wedding package by hard rock cafe"
+   }
+}

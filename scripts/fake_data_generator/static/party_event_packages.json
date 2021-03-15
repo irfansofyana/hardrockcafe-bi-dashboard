@@ -1,0 +1,22 @@
+{
+  "Graduation Party": {
+    "Currency": "USD",
+    "Price": "500",
+    "Description": "Graduation party package produced by Hard rock cafe"
+  },
+  "Birthday Party": {
+    "Currency": "USD",
+    "Price": "300",
+    "Description": "Birthday party package produced by Hard rock cafe"
+  },
+  "New Year Party": {
+    "Currency": "USD",
+    "Price": "600",
+    "Description": "New Year party package produced by Hard rock cafe"
+  },
+  "Religious Party": {
+    "Currency": "USD",
+    "Price": "400",
+    "Description": "Religious party package produced by Hard rock cafe"
+  }
+}
