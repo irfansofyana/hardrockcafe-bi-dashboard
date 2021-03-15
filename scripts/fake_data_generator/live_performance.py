@@ -71,13 +71,13 @@ def generate_fake_live_performance(cafes, guests, times):
     ]
     filtered_guests = []
     for category in performance_category:
-        filtered_guests += filter_guest_by_category(guests, category)
+        filtered_guests.append(filter_guest_by_category(guests, category))
 
     generated_data = []
     for i, cafe in enumerate(cafes):
-        frequency = random.randint(40, 60)
+        frequency = random.randint(30, 50)
 
-        detail_freq = [None] * 7
+        detail_freq = [0] * 7
         detail_freq[0]    = int(frequency * random.randint(30, 35) / 100) #band_rock
         detail_freq[1]    = int(frequency * random.randint(20, 20) / 100) #band_pop
         detail_freq[2]    = int(frequency * random.randint(10, 16) / 100) #single_pop
@@ -85,7 +85,7 @@ def generate_fake_live_performance(cafes, guests, times):
         detail_freq[4]    = int(frequency * random.randint(5, 7) / 100)   #band_reggae
         detail_freq[5]    = int(frequency * random.randint(1, 5) / 100)   #single_edm
         detail_freq[6]    = int(frequency * random.randint(1, 5) / 100)   #band_jazz
-        remainder_freq    = 100 - sum(detail_freq)
+        remainder_freq    = frequency - sum(detail_freq)
         detail_freq[0] += remainder_freq
 
         number_of_visitors_freq = [
@@ -102,14 +102,14 @@ def generate_fake_live_performance(cafes, guests, times):
         times_len = len(times)
         for category_order in range(7):
             for _ in range(detail_freq[category_order]):
-                chosen_guest = random.randint(0, len(filtered_guests[category_order]))
-                guest_id = filtered_guests[chosen_guest]['id']
+                chosen_guest = random.randint(0, len(filtered_guests[category_order]) - 1)
+                guest_id = filtered_guests[category_order][chosen_guest]['id']
                 start_time, end_time = get_times_attribute(times_len)
                 number_of_visitors = get_number_of_visitors(
                     number_of_visitors_freq[category_order][0],
                     number_of_visitors_freq[category_order][1]
                 )
-                number_of_orders = random.randint(number_of_visitors, number_of_visitors * 2)
+                number_of_orders = random.randint(int(number_of_visitors/3), number_of_visitors * 2)
                 performance_duration_in_minute = get_time_differences_in_minute(times, start_time, end_time)
 
                 generated_data.append(gather_data(

@@ -134,11 +134,11 @@ def generate_fake_sales(cafes, products, times, customers, promos):
     ]
     filtered_products = []
     for category in product_category:
-        filtered_products += filter_product_by_category(products, category)
+        filtered_products.append(filter_product_by_category(products, category))
 
     generated_data = []
     for i, cafe in enumerate(cafes):
-        frequency = random.randint(200, 300)
+        frequency = random.randint(200, 400)
 
         detail_freq = [0] * 5
         detail_freq[0]  = int(frequency * random.randint(40, 50) / 100) # Foods
@@ -146,7 +146,7 @@ def generate_fake_sales(cafes, products, times, customers, promos):
         detail_freq[2]  = int(frequency * random.randint(10, 15) / 100) # Snacks
         detail_freq[3]  = int(frequency * random.randint(4, 6) / 100) # wedding
         detail_freq[4]  = int(frequency * random.randint(3, 4) / 100) # parties
-        remainder_freq  = 100 - sum(detail_freq)
+        remainder_freq  = frequency - sum(detail_freq)
         detail_freq[0]  += remainder_freq
 
         cafe_id = i + 1
