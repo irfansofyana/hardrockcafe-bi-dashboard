@@ -4,7 +4,7 @@ import json
 import random
 
 def generate_fake_cafes():
-    with open('static/list_countries_cities_hardrockcafe.json', 'r') as f:
+    with open('fake_data_generator/static/list_countries_cities_hardrockcafe.json', 'r') as f:
         countries_cities_mapper = json.load(f)
 
     fake = Faker()
@@ -31,3 +31,6 @@ def generate_fake_cafes():
             cafes.append(cafe)
 
     return cafes
+
+if __name__ == "__main__":
+    print(generate_fake_cafes())

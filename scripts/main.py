@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from scripts.schema.tables import Base, Customer, Cafe, Product, Promo, Time, Guest
-
+from loader import load_cafes_table
+from scripts.fake_data_generator.cafe import generate_fake_cafes
 
 def get_env():
     load_dotenv()
@@ -41,3 +42,5 @@ if __name__=="__main__":
 
     Base.metadata.create_all(mysql_engine)
 
+    fake_cafes = generate_fake_cafes()
+    load_cafes_table(session, fake_cafes)
