@@ -67,7 +67,7 @@ def load_product_table(session, products):
         session.add(row)
     session.commit()
 
-def load_live_performance_table(sesion, live_performances):
+def load_live_performance_table(session, live_performances):
     for live_performance in live_performances:
         row = LivePerformance(
             cafe_id                         = live_performance['cafe_id'],
@@ -78,5 +78,20 @@ def load_live_performance_table(sesion, live_performances):
             number_of_orders                = live_performance['number_of_orders'],
             performance_duration_in_minute  = live_performance['performance_duration_in_minute']
         )
-        sesion.add(row)
-    sesion.commit()
+        session.add(row)
+    session.commit()
+
+def load_promo_table(session, promos):
+    for promo in promos:
+        row = Promo(
+            name                    = promo['name'],
+            description             = promo['description'],
+            started_date            = promo['started_date'],
+            ended_date              = promo['ended_date'],
+            category_name           = promo['category_name'],
+            category_description    = promo['category_description'],
+            currency_used           = promo['currency_used'],
+            max_promo_amount        = promo['max_promo_amount']
+        )
+        session.add(row)
+    session.commit()

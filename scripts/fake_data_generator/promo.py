@@ -30,14 +30,15 @@ def generate_fake_promos():
     generated_promos = []
 
     for i in range(NUMBER_OF_GENERATED_PROMOS):
-        started_date    = generate_random_date_between(long_time_ago, now_time)
-        ended_date      = started_date + datetime.timedelta(days=random.randint(1, 5))
-        name            = fake.word() + " promo"
-        description     = "Legit promo only for you"
-        chosen_category = random.randint(0, number_of_promo_category-1)
-        category_name   = promo_category[promo_category_list[chosen_category]]
-        currency_used   = 'USD'
-        max_promo_amount = random.randint(5, 20)
+        started_date          = generate_random_date_between(long_time_ago, now_time)
+        ended_date            = started_date + datetime.timedelta(days=random.randint(1, 5))
+        name                  = fake.word() + " promo"
+        description           = "Legit promo only for you"
+        chosen_category       = random.randint(0, number_of_promo_category-1)
+        category_name         = promo_category_list[chosen_category]
+        category_description  = promo_category[promo_category_list[chosen_category]]
+        currency_used         = 'USD'
+        max_promo_amount      = random.randint(5, 20)
 
         promo = {
             'name': name,
@@ -45,6 +46,7 @@ def generate_fake_promos():
             'started_date':str(started_date),
             'ended_date': str(ended_date),
             'category_name': category_name,
+            'category_description': category_description,
             'currency_used': currency_used,
             'max_promo_amount': max_promo_amount
         }
