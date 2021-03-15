@@ -1,4 +1,4 @@
-from scripts.schema.tables import Customer, Cafe, Product, Promo, Time, Guest
+from scripts.schema.tables import Customer, Cafe, Product, Promo, Time, Guest, LivePerformance
 
 def load_cafe_table(session, cafes):
     for cafe in cafes:
@@ -66,3 +66,17 @@ def load_product_table(session, products):
         )
         session.add(row)
     session.commit()
+
+def load_live_performance_table(sesion, live_performances):
+    for live_performance in live_performances:
+        row = LivePerformance(
+            cafe_id                         = live_performance['cafe_id'],
+            guest_id                        = live_performance['guest_id'],
+            start_time_id                   = live_performance['start_time_id'],
+            end_time_id                     = live_performance['end_time_id'],
+            number_of_visitors              = live_performance['number_of_visitors'],
+            number_of_orders                = live_performance['number_of_orders'],
+            performance_duration_in_minute  = live_performance['performance_duration_in_minute']
+        )
+        sesion.add(row)
+    sesion.commit()

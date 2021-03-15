@@ -25,22 +25,20 @@ def generate_fake_times():
         else:
             holiday_status = False
 
-        for hour in range(11, 21):
-            next_one_hour = hour + 1
-
+        for hour in range(11, 22):
             date = {
                 'date': str(date_iterator),
+                'hour': hour,
+                'minute': 0,
                 'day_name': day_name,
                 'month': month,
                 'year': year,
                 'holiday_status': holiday_status,
                 'weekend_status': weekend_status,
                 'weekday_status': weekday_status,
-                'minute': 0
             }
 
-            dates.append({**date, **{'hour': hour}})
-            dates.append({**date, **{'hour': next_one_hour}})
+            dates.append(date)
 
         date_iterator = date_iterator + datetime.timedelta(days=1)
 

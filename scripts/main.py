@@ -3,12 +3,13 @@ from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from scripts.schema.tables import Base
-from loader import load_cafe_table, load_customer_table, load_guest_table, load_time_table, load_product_table
+from loader import load_cafe_table, load_customer_table, load_guest_table, load_time_table, load_product_table, load_live_performance_table
 from scripts.fake_data_generator.cafe import generate_fake_cafes
 from scripts.fake_data_generator.guest import generate_fake_guests
 from scripts.fake_data_generator.product import generate_fake_products
 from scripts.fake_data_generator.time import generate_fake_times
 from scripts.fake_data_generator.customer import generate_fake_customers
+from scripts.fake_data_generator.live_performance import generate_fake_live_performance
 
 def get_env():
     load_dotenv()
@@ -66,5 +67,10 @@ if __name__=="__main__":
         fake_products = generate_fake_products()
         load_product_table(session, fake_products)
         print('Product table loaded!')
+
+        fake_live_performances = generate_fake_live_performance(fake_cafes, fake_guests, fake_times)
+        load_live_performance_table(session, fake_live_performances)
+        print('Live performance loaded!')
+
     except Exception as err:
         print(err)
