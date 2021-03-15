@@ -11,6 +11,8 @@ from scripts.fake_data_generator.time import generate_fake_times
 from scripts.fake_data_generator.customer import generate_fake_customers
 from scripts.fake_data_generator.live_performance import generate_fake_live_performance
 from scripts.fake_data_generator.promo import generate_fake_promos
+from scripts.fake_data_generator.sales import generate_fake_sales
+
 
 def get_env():
     load_dotenv()
@@ -77,5 +79,8 @@ if __name__=="__main__":
         load_promo_table(session, fake_promos)
         print('Promo table loaded!')
 
+        fake_sales = generate_fake_sales(fake_cafes, fake_products, fake_times, fake_customers, fake_promos)
+        load_sales_table(session, fake_sales)
+        print('Sales table loaded!')
     except Exception as err:
         print(err)

@@ -1,4 +1,4 @@
-from scripts.schema.tables import Customer, Cafe, Product, Promo, Time, Guest, LivePerformance
+from scripts.schema.tables import Customer, Cafe, Product, Promo, Time, Guest, LivePerformance, Sales
 
 def load_cafe_table(session, cafes):
     for cafe in cafes:
@@ -92,6 +92,23 @@ def load_promo_table(session, promos):
             category_description    = promo['category_description'],
             currency_used           = promo['currency_used'],
             max_promo_amount        = promo['max_promo_amount']
+        )
+        session.add(row)
+    session.commit()
+
+def load_sales_table(session, sales):
+    for sale in sales:
+        row = Sales(
+            cafe_id         =   sale['cafe_id'],
+            product_id      =   sale['product_id'],
+            time_id         =   sale['time_id'],
+            customer_id     =   sale['customer_id'],
+            promo_id        =   sale['promo_id'],
+            total_quantity  =   sale['total_quantity'],
+            payment_currency=   sale['payment_currency'],
+            gross_payment   =   sale['gross_payment'],
+            total_discount  =   sale['total_discount'],
+            total_payment   =   sale['total_payment']
         )
         session.add(row)
     session.commit()

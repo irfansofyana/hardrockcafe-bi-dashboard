@@ -29,7 +29,7 @@ def generate_fake_promos():
     fake = Faker()
     generated_promos = []
 
-    for i in range(NUMBER_OF_GENERATED_PROMOS):
+    for i in range(NUMBER_OF_GENERATED_PROMOS - 1):
         started_date          = generate_random_date_between(long_time_ago, now_time)
         ended_date            = started_date + datetime.timedelta(days=random.randint(1, 5))
         name                  = fake.word() + " promo"
@@ -53,4 +53,14 @@ def generate_fake_promos():
 
         generated_promos.append(promo)
 
+    generated_promos.append(({
+        'name': 'NO_PROMO',
+        'description': 'Not a promo',
+        'started_date': None,
+        'ended_date': None,
+        'category_name': None,
+        'category_description': None,
+        'currency_used': 'USD',
+        'max_promo_amount': 0
+    }))
     return generated_promos
