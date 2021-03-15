@@ -36,8 +36,8 @@ def generate_fake_guests():
             name = 'The ' + fake.first_name() + ' And ' + fake.last_name() if is_band else fake.name()
 
             country_origin = fake.country()
-            fee_rate_per_hour = random.randint(100, 1000)
-            fee_currency = fake.currency_code()
+            fee_rate_per_hour = random.randint(500, 5000)
+            fee_currency = 'USD'
 
             guest = {
                 'name': name,

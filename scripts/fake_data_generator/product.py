@@ -33,7 +33,7 @@ def generate_fake_products():
                 'description': f'{product} is one of the best {category} produced by hard rock cafe',
                 'category_name': category,
                 'category_description': category_product_description[category],
-                'price_currency': fake.currency_code(),
+                'price_currency': 'USD',
                 'price_amount': random.randint(price_range[category][0], price_range[category][1])
             }
             generated_products.append(generated_product)
@@ -66,8 +66,6 @@ def generate_fake_products():
     snacks_name             = read_products_name(snacks_name_directory)
     wedding_packages        = read_products_name(wedding_packages_directory, is_json=True)
     parties_events_packages = read_products_name(parties_events_directory, is_json=True)
-
-    fake        = Faker()
 
     products = []
     products += generate_product(foods_name, 'Foods')
