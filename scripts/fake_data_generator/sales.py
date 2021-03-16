@@ -36,83 +36,93 @@ def generate_fake_sales(cafes, products, times, customers, promos):
         }
 
     def get_random_food(foods, freq):
-        number_of_foods = len(foods)
+        number_of_foods = int(len(foods))
+        food_ids = [food['id'] for food in foods]
+
         fav_percentage = [0] * 3
         fav_percentage[0]  = int(freq * 45 / 100)
         fav_percentage[1]  = int(freq * 30 / 100)
         fav_percentage[2]  = int(freq * 15 / 100)
-        remainder_freq  = freq - sum(fav_percentage)
+        remainder_freq  = int(freq) - sum(fav_percentage)
 
         food_product_ids = []
         for id in range(3):
-            food_product_ids += [id+1 for _ in range(fav_percentage[id])]
+            food_product_ids += [food_ids[id] for _ in range(fav_percentage[id])]
         for _ in range(remainder_freq):
-            chosen_id = random.randint(4, number_of_foods)
-            food_product_ids.append(chosen_id)
+            chosen_id = random.randint(3, number_of_foods-1)
+            food_product_ids.append(food_ids[chosen_id])
         return food_product_ids
 
     def get_random_drink(drinks, freq):
-        number_of_drinks = len(drinks)
+        number_of_drinks = int(len(drinks))
+        drink_ids = [drink['id'] for drink in drinks]
+
         fav_percentage = [0] * 3
         fav_percentage[0] = int(freq * 30 / 100)
         fav_percentage[1] = int(freq * 45 / 100)
         fav_percentage[2] = int(freq * 20 / 100)
-        remainder_freq = freq - sum(fav_percentage)
+        remainder_freq = int(freq) - sum(fav_percentage)
 
         drink_product_ids = []
         for id in range(3):
-            drink_product_ids += [id + 1 for _ in range(fav_percentage[id])]
+            drink_product_ids += [drink_ids[id] for _ in range(fav_percentage[id])]
         for _ in range(remainder_freq):
-            chosen_id = random.randint(4, number_of_drinks)
-            drink_product_ids.append(chosen_id)
+            chosen_id = random.randint(3, number_of_drinks-1)
+            drink_product_ids.append(drink_ids[chosen_id])
         return drink_product_ids
 
     def get_random_snack(snacks, freq):
-        number_of_snacks = len(snacks)
+        number_of_snacks = int(len(snacks))
+        snack_ids = [snack['id'] for snack in snacks]
+
         fav_percentage = [0] * 3
         fav_percentage[0] = int(freq * 45 / 100)
         fav_percentage[1] = int(freq * 15 / 100)
         fav_percentage[2] = int(freq * 30 / 100)
-        remainder_freq = freq - sum(fav_percentage)
+        remainder_freq = int(freq) - sum(fav_percentage)
 
         snack_product_ids = []
         for id in range(3):
-            snack_product_ids += [id + 1 for _ in range(fav_percentage[id])]
+            snack_product_ids += [snack_ids[id] for _ in range(fav_percentage[id])]
         for _ in range(remainder_freq):
-            chosen_id = random.randint(4, number_of_snacks)
-            snack_product_ids.append(chosen_id)
+            chosen_id = random.randint(3, number_of_snacks-1)
+            snack_product_ids.append(snack_ids[chosen_id])
         return snack_product_ids
 
     def get_random_wedding(weddings, freq):
-        number_of_weddings = len(weddings)
+        number_of_weddings = int(len(weddings))
+        wedding_ids = [wedding['id'] for wedding in weddings]
+
         fav_percentage = [0] * 3
         fav_percentage[0] = int(freq * 30 / 100)
         fav_percentage[1] = int(freq * 45 / 100)
         fav_percentage[2] = int(freq * 15 / 100)
-        remainder_freq = freq - sum(fav_percentage)
+        remainder_freq = int(freq) - sum(fav_percentage)
 
         wedding_product_ids = []
         for id in range(3):
-            wedding_product_ids += [id + 1 for _ in range(fav_percentage[id])]
+            wedding_product_ids += [wedding_ids[id] for _ in range(fav_percentage[id])]
         for _ in range(remainder_freq):
-            chosen_id = random.randint(4, number_of_weddings)
-            wedding_product_ids.append(chosen_id)
+            chosen_id = random.randint(3, number_of_weddings-1)
+            wedding_product_ids.append(wedding_ids[chosen_id])
         return wedding_product_ids
 
     def get_random_party(parties, freq):
-        number_of_parties = len(parties)
+        number_of_parties = int(len(parties))
+        party_ids = [party['id'] for party in parties]
+
         fav_percentage = [0] * 3
         fav_percentage[0] = int(freq * 20 / 100)
         fav_percentage[1] = int(freq * 30 / 100)
         fav_percentage[2] = int(freq * 55 / 100)
-        remainder_freq = freq - sum(fav_percentage)
+        remainder_freq = int(freq) - sum(fav_percentage)
 
         party_product_ids = []
         for id in range(3):
-            party_product_ids += [id + 1 for _ in range(fav_percentage[id])]
+            party_product_ids += [party_ids[id] for _ in range(fav_percentage[id])]
         for _ in range(remainder_freq):
-            chosen_id = random.randint(4, number_of_parties)
-            party_product_ids.append(chosen_id)
+            chosen_id = random.randint(3, number_of_parties-1)
+            party_product_ids.append(party_ids[chosen_id])
         return party_product_ids
 
     cafes       = add_atribute_id(cafes)
@@ -168,15 +178,14 @@ def generate_fake_sales(cafes, products, times, customers, promos):
                 time_id     = random.randint(1, number_of_times)
                 total_quantity = random_total_quantity(category_order)
                 payment_currency = 'USD'
-                gross_payment    = total_quantity * products[product_id - 1]['price_amount']
+                gross_payment    = total_quantity * int(products[product_id - 1]['price_amount'])
                 is_discount     = random.randint(0, 9)
                 if (is_discount == 1):
                     total_discount  = random.randint(1, promos[promo_id - 1]['max_promo_amount'])
                 else:
                     total_discount  = 0
                     promo_id = number_of_promos
-                total_payment = gross_payment - total_discount
-
+                total_payment = int(gross_payment) - int(total_discount)
                 generated_data.append(gather_date (
                      cafe_id, product_id, time_id, customer_id, promo_id,
                      total_quantity, payment_currency, gross_payment, total_discount,
